@@ -1,0 +1,45 @@
+Sanchay Swing Client:
+
+File "Sanchay/sanchay-client-config.txt" contains default host URL, username and password (if used)
+
+Main class to run:
+
+sanchay.SanchayMain
+
+Jar file containing all libraries:
+
+Sanchay/target/Sanchay-1.0-SNAPSHOT.jar
+
+Sanchay Server:
+
+Create an empty MySQL database:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/sanchayuserservice
+spring.datasource.username=root
+spring.datasource.password=root123
+
+Main class:
+
+sanchay.server.SanchayServerApplication
+
+War file containing all libraries:
+
+SanchayServer/target/SanchayServer-0.0.1-SNAPSHOT.war
+
+
+Context path for REST API:
+
+/sanchay-server
+
+Context path for the test home page to check if deployment is working:
+
+/sanchay-server/home
+
+Default username:
+
+admin
+
+Default password:
+
+1234
+
