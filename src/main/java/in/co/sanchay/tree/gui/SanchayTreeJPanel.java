@@ -2726,6 +2726,19 @@ public class SanchayTreeJPanel extends javax.swing.JPanel implements SanchayClie
         jtree.requestFocusInWindow();
     }
 
+//    public void selectFont(EventObject e)
+//    {
+//        String im = SanchayLanguages.(this);
+//
+//        if (owner != null)
+//        {
+//            SanchayLanguages.changeInputMethod(owner, im);
+//        } else if (dialog != null)
+//        {
+//            SanchayLanguages.changeInputMethod(dialog, im);
+//        }
+//    }
+
     public void selectInputMethod(EventObject e)
     {
         String im = SanchayLanguages.selectInputMethod(this);

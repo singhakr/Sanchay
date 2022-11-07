@@ -74,7 +74,7 @@ public class RMIUtils {
         return path;
     }
     
-    public static boolean listDirectories(String parentDirectory, RemoteFileNode rootNode, RMIFileSystemRI rmiFS) throws RemoteException
+    public static boolean listDirectories(String parentDirectory, RemoteFileNode rootNode, String charset, RMIFileSystemRI rmiFS) throws RemoteException
     {
         String foundPath = null;
         String absPathServer = null;
@@ -137,7 +137,7 @@ public class RMIUtils {
 
                     System.out.println("Relative found path on server: " + foundPath);
                     
-                    RemoteFile rfile = new RemoteFile(file.getName(), foundPath, absPathServer, absPathClient, false);
+                    RemoteFile rfile = new RemoteFile(file.getName(), foundPath, absPathServer, absPathClient, charset, false);
                  
 //                    remoteFile = new RemoteSftpFile(entry, rootRemoteFile, foundPath);
 //                    node = RemoteFileNode.getRemoteFileNodeInstance(null, remoteFile, rfile, rmiFS, RemoteFileNode.RMI_MODE);            
@@ -180,13 +180,13 @@ public class RMIUtils {
 
                     System.out.println("Relative found path on server: " + foundPath);
                     
-                    RemoteFile rfile = new RemoteFile(file.getName(), foundPath, absPathServer, absPathClient, true);
+                    RemoteFile rfile = new RemoteFile(file.getName(), foundPath, absPathServer, absPathClient, charset, true);
 
 //                    node = RemoteFileNode.getRemoteFileNodeInstance(null, null, rfile, rmiFS, RemoteFileNode.RMI_MODE);            
                     node = RemoteFileNode.getRemoteFileNodeInstance(null, null, rfile, RemoteFileNode.RMI_MODE);            
                     rootNode.add(node);
                  
-                    RMIUtils.listDirectories(foundPath, node, rmiFS);
+                    RMIUtils.listDirectories(foundPath, node, charset, rmiFS);
 
                     System.out.println("Found file:" + foundPath);
 //                    }

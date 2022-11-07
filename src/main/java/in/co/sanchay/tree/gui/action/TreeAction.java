@@ -73,6 +73,7 @@ public class TreeAction extends AbstractAction {
     public static final int VIEW_GDEPS = 29; // A 'real' tree-like view of group dependencies
     public static final int VIEW_LDEPS = 30; // A 'real' tree-like view of leaf (lexical) dependencies
     public static final int VIEW_PS = 31; // A 'real' tree-like view of phrase structure
+//	public static final int SELECT_FONT = 32;
 
     public static final int SELECT_INPUT_METHOD = 32;
     public static final int SHOW_KB_MAP = 33;
@@ -524,6 +525,18 @@ public class TreeAction extends AbstractAction {
 		act.putValue(MNEMONIC_KEY, Integer.valueOf(KeyEvent.VK_M));
         act.setCommand(VIEW_PS);
 		return act;
+
+//		case SELECT_FONT:
+//			act = new TreeAction(jpanel, "Select Font") {
+//				public void actionPerformed(ActionEvent e) {
+//					this.currentTreeJPanel.selectFont(e);
+//				}
+//			};
+//
+//			act.putValue(SHORT_DESCRIPTION, "Change the current font.");
+////			act.putValue(MNEMONIC_KEY, Integer.valueOf(KeyEvent.VK_));
+//			act.setCommand(SELECT_FONT);
+//			return act;
 
 	    case SELECT_INPUT_METHOD:
 		act = new TreeAction(jpanel, GlobalProperties.getIntlString("Input_Method")) {

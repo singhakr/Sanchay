@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.EncodedResource;
 import org.springframework.http.*;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -998,7 +999,7 @@ public class SanchaySpringRestClient {
         return isDirectory;
     }
 
-    public boolean listDirectories(String parentDirectory, RemoteFileNode rootNode) throws JsonProcessingException {
+    public boolean listDirectories(String parentDirectory, RemoteFileNode rootNode, String charset) throws JsonProcessingException {
         String foundPath = null;
         String absPathServer = null;
         String absPathClient = null;
@@ -1014,7 +1015,7 @@ public class SanchaySpringRestClient {
         else
         {
             annotationDirRF = new RemoteFile(parentDirectory, annotationDirRF.getRelativePath() + "/" + parentDirectory,
-                    defaultServerDirPath + "/" + parentDirectory, null, true);
+                    defaultServerDirPath + "/" + parentDirectory, null, charset, true);
             remoteFiles = listFilesOnServer(user.getUsername(), annotationDirRF);
         }
 
@@ -1123,7 +1124,7 @@ public class SanchaySpringRestClient {
                     node = RemoteFileNode.getRemoteFileNodeInstance(null, null, rfile, RemoteFileNode.SPRING_MODE);
                     rootNode.add(node);
 
-                    listDirectories(foundPath, node);
+                    listDirectories(foundPath, node, charset);
 
                     System.out.println("Found file:" + foundPath);
 //                    }
@@ -1304,9 +1305,12 @@ public class SanchaySpringRestClient {
 //        HttpEntity<RemoteFile> entity = new HttpEntity<>(remoteFile, headers);
 
         try {
-            ResponseEntity<Resource> response = restTemplate.exchange(
+//            ResponseEntity<Resource> response = restTemplate.exchange(
+//                    fileURL,
+//                    HttpMethod.POST, entity, Resource.class);
+            ResponseEntity<EncodedResource> response = restTemplate.exchange(
                     fileURL,
-                    HttpMethod.POST, entity, Resource.class);
+                    HttpMethod.POST, entity, EncodedResource.class);
 
             System.out.println("Response: " + response);
 

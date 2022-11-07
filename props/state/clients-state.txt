@@ -43,7 +43,7 @@ Column Names::Property	Value
 KVPropertiesEnd
 KVPropertiesBegin::Sanchay Editor
 Column Names::Property	Value
-CurrentDir	D:\projects\Sanchay-POM-Project\Sanchay\tmp
+CurrentDir	D:\projects\Sanchay-Maven\Sanchay\tmp
 fontSize	14
 KVPropertiesEnd
 KVPropertiesBegin::Sanchay HTML Browser
@@ -69,10 +69,10 @@ currentDir	.
 KVPropertiesEnd
 KVPropertiesBegin::Syntactic Annotation
 Column Names::Property	Value
-LangEnc	snd::utf8
-CurrentDir	D:\projects\Sanchay-POM-Project\Sanchay\tmp
+LangEnc	hin::utf8
+CurrentDir	D:\projects\Sanchay-Maven\Sanchay\annotation\IIIT-H\Hindi\POS Tagged\socrates\Premchand
 CurrentFontSize	14
-CurrentTreeEditTab	Attributes
+CurrentTreeEditTab	Tags
 KVPropertiesEnd
 KVPropertiesBegin::Table Editor
 Column Names::Property	Value

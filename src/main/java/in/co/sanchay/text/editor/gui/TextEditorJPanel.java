@@ -1251,7 +1251,7 @@ public class TextEditorJPanel extends javax.swing.JPanel implements WindowListen
                 GlobalProperties.getIntlString("Select_the_language"), GlobalProperties.getIntlString("Language"), JOptionPane.INFORMATION_MESSAGE, null,
                 langs, initLang);
         
-        if(switching) {
+        if(switching && parent != null && selectedLanguage != null) {
             String langCode = SanchayLanguages.getLangEncCode(selectedLanguage);
             ((TextEditorJPanel) parent).langEnc = langCode;
             

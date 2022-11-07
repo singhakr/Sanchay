@@ -705,6 +705,10 @@ public class SanchayLanguages {
         {
             cmp.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         }
+        else
+        {
+            cmp.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        }
     }
 
     public static void selectInputMethodForComponent(Component cmp) {

@@ -3106,7 +3106,7 @@ public class SanchayRemoteWorkJPanel extends javax.swing.JPanel
                 }
             }
 
-            RMIUtils.listDirectories("", rootRemoteFileNode, rmiFileSystem);
+            RMIUtils.listDirectories("", rootRemoteFileNode, charset, rmiFileSystem);
             RemoteFileNode annotationDirNode = RMIUtils.getAnnotationDirNodeRMI(rootRemoteFileNode);
             RMIUtils.cloneDirectory(annotationDirNode, rmiFileSystem, false);
         }
@@ -3139,7 +3139,7 @@ public class SanchayRemoteWorkJPanel extends javax.swing.JPanel
                 }
             }
 
-            sanchaySpringRestClient.listDirectories("", rootRemoteFileNode);
+            sanchaySpringRestClient.listDirectories("", rootRemoteFileNode, charset);
             RemoteFileNode annotationDirNode = RMIUtils.getAnnotationDirNodeRMI(rootRemoteFileNode);
 
             if(annotationDirNode == null) {
